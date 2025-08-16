@@ -1,0 +1,10 @@
+services:
+  openresty:
+    image: openresty/openresty:alpine
+    container_name: openresty
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+      - ./lua:/usr/local/openresty/nginx/lua
+      - ./data:/data
